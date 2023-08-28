@@ -8,7 +8,12 @@
   </head>
   <body>
     <main>
-      <form action="#" enctype="multipart/form-data" >
+      <form action="#" enctype="multipart/form-data">
+        <label for="avatar" class="avatar">
+          <input type="file" accept=".png, .jpeg, .jpg" id="avatar" />
+          <img src="./lucas-benjamin-wQLAGv4_OYs-unsplash.jpg" alt="selected image" id="img" />
+          <span>select</span>
+        </label>
         <label for="userName" class="input-field"
           ><span>Name</span><input type="text" id="userName" />
         </label>
@@ -23,8 +28,23 @@
           <input type="password" id="password" />
         </label>
 
-        <input type="submit" value="Complete">
+        <input type="submit" value="Complete" />
       </form>
     </main>
+
+    <script>
+      const img = document.getElementById("img");
+      const file = document.getElementById("avatar");
+
+      file.addEventListener("change", () => {
+        if (file.files && file.files[0]) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            img.src = e.target.result;
+          };
+          reader.readAsDataURL(file.files[0]);
+        }
+      });
+    </script>
   </body>
 </html>

@@ -5,7 +5,7 @@ body {
   display: grid;
   place-content: center;
 }
-*{
+* {
   position: relative;
 }
 
@@ -27,5 +27,45 @@ form {
 
 input {
   padding: 0.5rem;
+}
 
+.avatar {
+  /* border: 2px solid red; */
+  width: 130px;
+  height: 130px;
+  margin: auto;
+  position: relative;
+  display: flex;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 5px black;
+}
+
+
+.avatar img {
+  /* border: 2px solid red; */
+  height: 100%;
+  width: 100%;
+  align-self: center;
+  /* scale: 1.5; */
+  display: grid;
+  place-content: center;
+  object-fit: cover;
+  
+}
+
+.avatar input[type="file"] {
+  position: absolute;
+  top: -1000px;
+}
+
+.avatar span {
+  position: absolute;
+  padding: .5em;
+  bottom: 0;
+  /* border: 2px solid red; */
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: rgba(205, 205, 205, 0.557);
 }
